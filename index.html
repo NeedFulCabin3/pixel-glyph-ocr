@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Client Side OCR</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <h1>Client-Side OCR</h1>
+  <p class="sub">Drop an image with typed text in it. Everything runs in your browser, nothing gets uploaded anywhere.</p>
+
+  <div class="controls">
+    <input type="file" id="fileInput" accept="image/*">
+    <button id="runBtn" disabled>Run OCR</button>
+    <button id="downloadBtn" disabled>Download .txt</button>
+  </div>
+
+  <div class="controls">
+    <label>Threshold offset
+      <input type="range" id="threshSlider" min="-60" max="60" value="0">
+      <span id="threshVal">0</span>
+    </label>
+    <label><input type="checkbox" id="invertCheck"> Light text on dark bg</label>
+    <label><input type="checkbox" id="boxesCheck" checked> Show detected boxes</label>
+  </div>
+
+  <div class="canvases">
+    <div>
+      <h3>Original</h3>
+      <canvas id="srcCanvas"></canvas>
+    </div>
+    <div>
+      <h3>Processed (binarized + boxes)</h3>
+      <canvas id="procCanvas"></canvas>
+    </div>
+  </div>
+
+  <h3>Recognized text</h3>
+  <textarea id="output" rows="10" placeholder="Text shows up here after you hit Run OCR..."></textarea>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
