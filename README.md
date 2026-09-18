@@ -1,4 +1,4 @@
-# pixel Glyph Ocr
+# Pixel Glyph
 
 An in-browser text extraction tool built around HTML5 Canvas pixel analysis. Upload an image, run localized binarization, segment distinct pixel clusters, and extract typed characters against pixel-mapped font matrices—all executed directly inside the client engine without network requests.
 
